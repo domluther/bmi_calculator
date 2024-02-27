@@ -3,7 +3,9 @@ import { useState } from 'react';
 export default function App() {
   const [weight, setWeight] = useState(0);
   const [height, setHeight] = useState(0);
-  const bmi = weight / ((height / 100) * (height / 100));
+  // height input is in cm but needs converting to m to calculate bmi
+  const heightInM = height / 100;
+  const bmi = weight / (heightInM * heightInM);
 
   return (
     <>
